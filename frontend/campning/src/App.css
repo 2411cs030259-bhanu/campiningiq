@@ -1,0 +1,330 @@
+/* ----------------- Body & Dynamic Background ----------------- */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(120deg, #f0f0f0, #d0e0ff);
+  background-size: 400% 400%;
+  animation: bgShift 20s ease infinite;
+  transition: background 0.5s ease;
+}
+
+/* ----------------- Dashboard Container ----------------- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 100vh;
+}
+
+/* ----------------- Header ----------------- */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dashboard-header h1 {
+  color: #333;
+  animation: fadeIn 2s ease forwards;
+}
+
+.profile {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transition: transform 0.3s ease;
+}
+
+.profile img:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: fadeIn 0.3s ease forwards;
+  z-index: 100;
+}
+
+.profile-dropdown button {
+  padding: 5px 10px;
+  background: linear-gradient(45deg, #ff4d4d, #ff8080);
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-dropdown button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 10px rgba(255,77,77,0.5);
+}
+
+/* ----------------- Upload Box ----------------- */
+.upload-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.upload-box input {
+  padding: 8px;
+  flex: 1;
+  min-width: 200px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: rgba(255,255,255,0.9);
+  transition: box-shadow 0.3s ease;
+}
+
+.upload-box input:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.upload-box button {
+  padding: 8px 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(45deg, #2196F3, #21CBF3);
+  color: white;
+  font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.upload-box button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(33,203,243,0.5);
+}
+
+/* ----------------- KPI Cards ----------------- */
+.kpi-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.kpi-card {
+  flex: 1 1 200px;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #42a5f5, #478ed1);
+  background-size: 200% 200%;
+  animation: cardBG 6s ease infinite alternate;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kpi-card:nth-child(2) { background: linear-gradient(135deg, #66bb6a, #43a047); }
+.kpi-card:nth-child(3) { background: linear-gradient(135deg, #ffa726, #fb8c00); }
+.kpi-card:nth-child(4) { background: linear-gradient(135deg, #ef5350, #e53935); }
+
+.kpi-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.kpi-card h3 {
+  margin-bottom: 10px;
+  color: rgba(255,255,255,0.9);
+}
+
+.kpi-card p {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+/* ----------------- Charts ----------------- */
+.charts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.chart-card {
+  flex: 1 1 300px;
+  background: rgba(255,255,255,0.9);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.chart-card:hover {
+  transform: translateY(-5px);
+}
+
+.chart-card h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* ----------------- Insights & Chatbot ----------------- */
+.insights, .chatbot {
+  background: rgba(255,255,255,0.95);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.chatbot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chatbot input {
+  flex: 1;
+  min-width: 200px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.chatbot button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(45deg, #4CAF50, #81C784);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chatbot button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76,175,80,0.3);
+}
+
+/* ----------------- Authentication Pages ----------------- */
+.auth-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.auth-container input {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.auth-container button {
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(45deg, #2196F3, #21CBF3);
+  color: white;
+  font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-container button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(33,203,243,0.5);
+}
+
+.link {
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* ----------------- Animations ----------------- */
+@keyframes bgShift {
+  0% { background: linear-gradient(120deg,#f0f0f0,#d0e0ff); }
+  25% { background: linear-gradient(120deg,#ffe0e0,#e0ffe0); }
+  50% { background: linear-gradient(120deg,#d0f0ff,#f0ffd0); }
+  75% { background: linear-gradient(120deg,#ffe0f0,#d0ffd0); }
+  100% { background: linear-gradient(120deg,#f0f0f0,#d0e0ff); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes cardBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ----------------- Responsive ----------------- */
+@media (max-width: 768px) {
+  .kpi-container, .charts { flex-direction: column; }
+  .upload-box, .chatbot { flex-direction: column; }
+}
+/* AI Chatbot Floating Logo */
+.ai-chatbot-container {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 1000;
+  cursor: pointer;
+  animation: floatMove 12s ease-in-out infinite alternate;
+}
+
+.ai-chatbot-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+
+.ai-chatbot-container:hover .ai-chatbot-logo {
+  transform: scale(1.1);
+}
+
+.ai-chatbot-container .chatbot {
+  margin-top: -20px;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.97);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Floating Animation */
+@keyframes floatMove {
+  0%   { transform: translate(0px, 0px) rotate(0deg); }
+  25%  { transform: translate(-15px, -10px) rotate(2deg); }
+  50%  { transform: translate(15px, -15px) rotate(-1deg); }
+  75%  { transform: translate(-10px, 10px) rotate(1deg); }
+  100% { transform: translate(10px, 15px) rotate(-2deg); }
+}

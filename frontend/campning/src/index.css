@@ -1,0 +1,64 @@
+.auth-container {
+  width: 300px;
+  margin: 100px auto;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  color: white;
+  animation: fadeIn 1s ease;
+}
+
+.auth-container input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+}
+
+.auth-container button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.auth-container button:hover {
+  transform: scale(1.05);
+}
+
+.auth-container p {
+  cursor: pointer;
+  margin-top: 10px;
+  color: #ffd700;
+  text-decoration: underline;
+}
+.data{
+  color: black;
+  font-size: 16;
+  text-align: center;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.container { padding: 20px; font-family: sans-serif; }
+.dashboard-header { display: flex; justify-content: space-between; align-items: center; }
+.profile { position: relative; cursor: pointer; }
+.profile img { width: 40px; height: 40px; border-radius: 50%; }
+.profile-dropdown {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.profile-dropdown button { cursor: pointer; }
+.upload-box, .kpi-container, .charts, .insights, .chatbot { margin-top: 20px; }
